@@ -1,2 +1,1 @@
-# frontend-guidelines
-# frontend-guidelines
+# Frontend guidelines

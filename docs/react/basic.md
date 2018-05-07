@@ -58,8 +58,8 @@ setState(prevState => ({
 ```js
 // WRONG
 setState(prevState => ({
-  value: newValue,
   ...prevState,
+  value: newValue,
 }));
 ```
 

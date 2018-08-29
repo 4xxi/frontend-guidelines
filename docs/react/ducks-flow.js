@@ -1,6 +1,6 @@
 /*
-  Since we had a few problems with using Flow
-  in ducks so I've created the recommendation for that.
+  Since we had a few problems with using Flow in ducks
+  so I've created the example for that.
 */
 
 type TPeriod = {

@@ -4,8 +4,8 @@
 */
 
 type TPeriod = {
-  value: number,
-  label: string,
+  id: number,
+  name: string,
 };
 
 /*
@@ -22,12 +22,9 @@ const getPeriodsSuccess = (data: TPeriod[]) => ({
   payload: data,
 });
 
-const renamePeriodSuccess = (id: number, name: string) => ({
+const renamePeriodSuccess = (data: TPeriod) => ({
   type: RENAME_PERIOD_SUCCESS,
-  payload: {
-    id,
-    name,
-  },
+  payload: data,
 });
 
 const clearStore = () => ({
@@ -43,7 +40,7 @@ const periodsReducer = (
   state: TPeriod[] = [],
   action:
     | $Call<typeof getPeriodsSuccess, TPeriod[]>
-    | $Call<typeof renamePeriodSuccess, number, string>
+    | $Call<typeof renamePeriodSuccess, TPeriod>
     | $Call<typeof clearStore>,
 ): TPeriod[] => {
   switch (action.type) {
@@ -53,9 +50,7 @@ const periodsReducer = (
     case RENAME_PERIOD_SUCCESS: {
       const { id, name } = action.payload;
 
-      return state.map(
-        el => (el.value === id ? { ...el, label: name } : { ...el }),
-      );
+      return state.map(el => (el.id === id ? { ...el, name } : { ...el }));
     }
 
     case CLEAR_STORE:

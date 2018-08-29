@@ -2,3 +2,4 @@
 
 * [Базовый JS](docs/js/basic.md)
 * [Базовый Реакт](docs/react/basic.md)
+* [Использование Flow для ducks](docs/react/ducks-flow.js)
